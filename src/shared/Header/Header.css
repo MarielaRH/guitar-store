@@ -1,0 +1,15 @@
+.header{
+  background-color: rgba(0, 0, 0, 0.364);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.header-links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}

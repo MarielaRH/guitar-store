@@ -1,0 +1,38 @@
+.footer {
+  background-color: black;
+  padding: 1rem;
+  width: 100%;
+}
+
+.footer-logo {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-social {
+  align-items: center;
+  color: rgba(218, 216, 216, 0.858);
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.footer-social i{
+  font-size: 1.2rem;
+}
+
+.footer-info {
+  align-items: center;
+  color: rgba(218, 216, 216, 0.858);
+  display: flex;
+  gap: 10rem;
+  justify-content: center;
+}
+
+.footer-copyright {
+  align-items: center;
+  color: rgba(218, 216, 216, 0.858);
+  display: flex;
+  justify-content: center;
+}
