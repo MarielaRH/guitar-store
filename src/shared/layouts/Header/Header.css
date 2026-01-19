@@ -1,0 +1,22 @@
+.header {
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.364);
+	display: flex;
+	justify-content: space-between;
+	min-height: 75px;
+	overflow: hidden;
+	padding: 1rem;
+}
+
+.header-links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.header-link {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}

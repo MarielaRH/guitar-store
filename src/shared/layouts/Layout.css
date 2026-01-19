@@ -2,18 +2,16 @@
   position: relative;
   min-height: 100vh;
   width: 100vw;
-  background: #000;
   isolation: isolate;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  background: #000000e4;
 }
 
-/* blobs */
 .scene::before {
   content: "";
   position: absolute;
-  inset: -30%;
+  inset: 5%;
   z-index: -1;
   will-change: filter;
 
@@ -23,14 +21,11 @@
     radial-gradient(800px 550px at 85% 30%, rgba(170, 120, 255, .22), transparent 65%),
     radial-gradient(900px 650px at 55% 90%, rgba(0, 210, 255, .18), transparent 62%),
     radial-gradient(700px 650px at 30% 95%, rgba(0, 255, 170, .12), transparent 70%);
-
   filter: blur(90px) saturate(120%);
 }
 
 .content {
   position: relative;
-  z-index: 1;
   flex: 1;
-  width: 100%;
-  /* background: lightblue; */
+  z-index: 1;
 }
