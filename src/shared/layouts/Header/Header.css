@@ -8,15 +8,33 @@
 	padding: 1rem;
 }
 
-.header-links {
+.header-link {
+	color: white;
+	text-decoration: none;
+	border-bottom: 1px solid transparent;
+	cursor: pointer;
+}
+
+.header-link:hover {
+	color: var(--primary-color);
+	text-decoration: none;
+	border-bottom: 1px solid var(--primary-color);
+	cursor: pointer;
+}
+
+.header-link.active {
+	color: var(--primary-color);
+	border-bottom: 1px solid var(--primary-color);
+	cursor: pointer;
+}
+
+.header-links-list {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 1.5rem;
 }
 
-.header-link {
-	color: white;
-	text-decoration: none;
-	cursor: pointer;
+.header-links-list li {
+	list-style: none;
 }

@@ -14,12 +14,8 @@ const ProductsPage = () => {
 				gap={10}>
 				{classic?.map((guitar) => (
 					<Card
-						imageUrl={guitar.image}
 						key={guitar.title}
-						price={guitar.price}
-						rate={guitar.rate}
-						subtitle={guitar.subtitle}
-						title={guitar.title}
+						guitar={guitar}
 					/>
 				))}
 			</GridLayout>
@@ -30,12 +26,8 @@ const ProductsPage = () => {
 				gap={10}>
 				{modern?.map((guitar) => (
 					<Card
-						imageUrl={guitar.image}
 						key={guitar.title}
-						price={guitar.price}
-						rate={guitar.rate}
-						subtitle={guitar.subtitle}
-						title={guitar.title}
+						guitar={guitar}
 					/>
 				))}
 			</GridLayout>
