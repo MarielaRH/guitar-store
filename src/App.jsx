@@ -4,6 +4,7 @@ import AboutUsPage from "./containers/AboutUs/about-us-page";
 import ContactPage from "./containers/Contact/contact-page";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./shared/layouts/Layout";
+import { Navigate } from "react-router";
 
 function App() {
 	return (
@@ -11,7 +12,12 @@ function App() {
 			<Route element={<Layout />}>
 				<Route
 					path="/"
-					element={<ProductsPage />}
+					element={
+						<Navigate
+							to="/products"
+							replace
+						/>
+					}
 				/>
 				<Route
 					path="/about-us"

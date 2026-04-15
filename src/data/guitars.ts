@@ -10,17 +10,22 @@ import image9 from "../assets/guitarra_9.svg";
 import image10 from "../assets/guitarra_10.svg";
 import image11 from "../assets/guitarra_11.svg";
 import image12 from "../assets/guitarra_12.svg";
+import { Guitar } from "../shared/interfaces/interfaces";
 
-export const guitarsByCategory = {
+export const guitarsByCategory: Record<string, Guitar[]> = {
 	classic: [
 		{
+			id: 1,
+			itemId: "classic-1",
 			title: "Crimson Classic",
 			subtitle: "Sonido cálido y sustain balanceado.",
 			price: 699,
 			rate: 4.6,
-			image: image1,
+			image: image4,
 		},
 		{
+			id: 2,
+			itemId: "classic-2",
 			title: "Sunburst Vintage",
 			subtitle: "Tono clásico con estilo retro.",
 			price: 899,
@@ -28,6 +33,8 @@ export const guitarsByCategory = {
 			image: image3,
 		},
 		{
+			id: 3,
+			itemId: "classic-3",
 			title: "Gold Top Pro",
 			subtitle: "Graves sólidos y ataque definido.",
 			price: 949,
@@ -35,6 +42,8 @@ export const guitarsByCategory = {
 			image: image5,
 		},
 		{
+			id: 4,
+			itemId: "classic-4",
 			title: "Strato Classic Red",
 			subtitle: "Brillante y expresiva.",
 			price: 699,
@@ -42,6 +51,8 @@ export const guitarsByCategory = {
 			image: image8,
 		},
 		{
+			id: 5,
+			itemId: "classic-5",
 			title: "Blue Wave",
 			subtitle: "Sonido limpio y cristalino.",
 			price: 729,
@@ -49,6 +60,8 @@ export const guitarsByCategory = {
 			image: image9,
 		},
 		{
+			id: 6,
+			itemId: "classic-6",
 			title: "Amber Strat",
 			subtitle: "Equilibrio perfecto para estudio.",
 			price: 759,
@@ -59,6 +72,8 @@ export const guitarsByCategory = {
 
 	modern: [
 		{
+			id: 7,
+			itemId: "modern-7",
 			title: "Emerald Rock",
 			subtitle: "Ideal para rock y blues moderno.",
 			price: 749,
@@ -66,6 +81,8 @@ export const guitarsByCategory = {
 			image: image2,
 		},
 		{
+			id: 8,
+			itemId: "modern-8",
 			title: "Cherry Flame",
 			subtitle: "Versátil y potente para escenarios.",
 			price: 829,
@@ -73,6 +90,8 @@ export const guitarsByCategory = {
 			image: image4,
 		},
 		{
+			id: 9,
+			itemId: "modern-9",
 			title: "Red Devil SG",
 			subtitle: "Ligera y agresiva en sonido.",
 			price: 799,
@@ -80,6 +99,8 @@ export const guitarsByCategory = {
 			image: image6,
 		},
 		{
+			id: 10,
+			itemId: "modern-10",
 			title: "Scarlet Shred",
 			subtitle: "Rápida y precisa para solos.",
 			price: 899,
@@ -87,6 +108,8 @@ export const guitarsByCategory = {
 			image: image7,
 		},
 		{
+			id: 11,
+			itemId: "modern-11",
 			title: "Inferno Quilt",
 			subtitle: "Alta ganancia y gran presencia.",
 			price: 999,
@@ -94,6 +117,8 @@ export const guitarsByCategory = {
 			image: image11,
 		},
 		{
+			id: 12,
+			itemId: "modern-12",
 			title: "Midnight Black",
 			subtitle: "Oscura, potente y elegante.",
 			price: 849,

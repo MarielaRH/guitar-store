@@ -1,11 +1,16 @@
 .header {
 	align-items: center;
-	background-color: rgba(0, 0, 0, 0.364);
 	display: flex;
 	justify-content: space-between;
 	min-height: 75px;
 	overflow: hidden;
-	padding: 1rem;
+	padding: 1.5rem 3rem;
+	}
+	
+	.header-group {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
 }
 
 .header-link {
