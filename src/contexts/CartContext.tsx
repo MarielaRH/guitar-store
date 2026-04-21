@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { CartItem, Guitar } from "../shared/interfaces/interfaces";
 
 interface CartContextType {
@@ -7,6 +7,7 @@ interface CartContextType {
 	addToCart: (guitar: Guitar, quantity: number) => void;
 	removeFromCart: (guitar: CartItem) => void;
 	updateQuantity: (guitar: CartItem, quantity: number) => void;
+	cleanCart: () => void;
 }
 
 const CartContext = createContext<CartContextType>({
@@ -15,10 +16,20 @@ const CartContext = createContext<CartContextType>({
 	addToCart: () => {},
 	removeFromCart: () => {},
 	updateQuantity: () => {},
+	cleanCart: () => {},
 });
 
 export const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
 	const [cart, setCart] = useState<CartItem[]>([]);
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			const cartFromStorage = window.localStorage.getItem("cart");
+			if (cartFromStorage) {
+				setCart(JSON.parse(cartFromStorage));
+			}
+		}
+	}, []);
 
 	// Get total amount
 	const totalCart = cart.reduce(
@@ -35,6 +46,7 @@ export const CartContextProvider = ({ children }: { children: React.ReactNode })
 			return;
 		} else {
 			setCart([...cart, { ...guitar, quantity }]);
+			window.localStorage.setItem("cart", JSON.stringify([...cart, { ...guitar, quantity }]));
 		}
 	};
 
@@ -42,6 +54,7 @@ export const CartContextProvider = ({ children }: { children: React.ReactNode })
 	const removeFromCart = (guitar: CartItem) => {
 		const newCart = cart.filter((item) => item.itemId !== guitar.itemId);
 		setCart(newCart);
+		window.localStorage.setItem("cart", JSON.stringify(newCart));
 	};
 
 	const updateQuantity = (guitar: CartItem, quantity: number) => {
@@ -51,11 +64,17 @@ export const CartContextProvider = ({ children }: { children: React.ReactNode })
 			const updatedCart = [...cart];
 			updatedCart[itemIndex].quantity = quantity;
 			setCart(updatedCart);
+			window.localStorage.setItem("cart", JSON.stringify(updatedCart));
 		}
 	};
 
+	const cleanCart = () => {
+		setCart([]);
+		window.localStorage.setItem("cart", JSON.stringify([]));
+	};
+
 	return (
-		<CartContext.Provider value={{ cart, addToCart, removeFromCart, totalCart, updateQuantity }}>
+		<CartContext.Provider value={{ cart, addToCart, removeFromCart, totalCart, updateQuantity, cleanCart }}>
 			{children}
 		</CartContext.Provider>
 	);

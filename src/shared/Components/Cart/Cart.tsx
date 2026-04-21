@@ -9,7 +9,7 @@ import { useCart } from "../../../contexts/CartContext";
 import CartItem from "./CartItem";
 
 const Cart = () => {
-	const { cart: guitars, totalCart } = useCart();
+	const { cart: guitars, totalCart, cleanCart } = useCart();
 
 	const overlayRef = useRef<OverlayPanel>(null);
 	return (
@@ -62,9 +62,17 @@ const Cart = () => {
 					</div>
 
 					{guitars.length > 0 && (
-						<Button
-							label="Pay now"
-							style={{ width: "100%" }}></Button>
+						<>
+							<Button
+								label="Pay now"
+								style={{ width: "100%" }}></Button>
+							<Button
+								severity="secondary"
+								outlined
+								label="Clear cart"
+								onClick={cleanCart}
+								style={{ width: "100%" }}></Button>
+						</>
 					)}
 				</section>
 			</OverlayPanel>

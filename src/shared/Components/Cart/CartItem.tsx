@@ -28,7 +28,7 @@ const CartItem = ({ guitar, index }: { guitar: CartItem; index: number }) => {
 				<p className="title cart-item-title">
 					{guitar.title}
 					<br />
-					<span className="subtitle">{guitar.subtitle}</span>
+					<span className="cart-item-subtitle ">{guitar.subtitle}</span>
 				</p>
 
 				<span style={{ fontSize: "1.5rem", fontWeight: "normal" }}>
